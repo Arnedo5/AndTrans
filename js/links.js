@@ -17,7 +17,7 @@ var links = [{
         "description"   :   "Drive B2B"
     },
     {
-        "image" :   "local_shipping",
+        "image" :   "group",
         "title" :   "Llistat Xofers",
         "link"  :   "https://docs.google.com/spreadsheets/d/1kBaJ92i1vUXOq3SpQYKJY_1OK-IbzDdhJiRB1BYlwvg/htmlview",
         "description"   :   "Drive Listado de chofers"

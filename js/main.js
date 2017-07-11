@@ -5,19 +5,28 @@
 
 
 
- function openLink(box) {
-    switch (box){
-        case 1:
-            window.open("http://red.victransa.com/WE/STQ_sound/menu.asp?LANID=3");
-        break;
-        case 2:
-            window.open("http://red.victransa.com/CLT/LOGINFRM.asp");
-        break;
-        case 3:
-            window.open("https://docs.google.com/spreadsheets/d/1uOZg6gSAbalWmzgSMkVgiYKjL-4j5ycEgk8Fe_yox6k/edit?usp=drive_web");
-        break;
-        case 4:
-            window.open("https://docs.google.com/spreadsheets/d/1kBaJ92i1vUXOq3SpQYKJY_1OK-IbzDdhJiRB1BYlwvg/htmlview");
-        break;
+
+document.write(links.length);
+createBox();
+
+ function createBox () {
+     for (x=0; x < links.length;x++) {
+         document.write(links[x].title);
+         createElement("<a>","link-" + x + " col s6 m6  l3","href",links[x].link,"",".boxes");
+         createElement("<div>","card-" + x + " card","key" ,"" ,"" ,".link-" + x);
+         createElement("<div>","card-content" + x + " card-content gradicent-3 white-text center","key" ,"" ,"" ,".card-" + x);
+         createElement("<i>","icon" + x + " medium material-icons","key" ,"" ,links[x].image ,".card-content" + x);
+         createElement("<p>"," ","key" ,"" ,links[x].title ,".card-content" + x);
      }
  }
+
+
+
+function createElement(typeElement, nameClass, typeAttr, nameAttr, text, append) {
+    $(typeElement)
+        .addClass(nameClass)
+        .attr(typeAttr, nameAttr)
+        .text(text)
+        .appendTo(append);
+}
+

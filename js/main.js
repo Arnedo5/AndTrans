@@ -1,7 +1,15 @@
-/* Url */
-createBox();
+/*
+    David Arnedo Gallardo
+    18/07/2017
+    Andrans PDA & others
+*/
 
- function createBox () {
+$( window ).load(function() {
+  createBox();
+  $(".version").text(version[0].text + " | " + version[0].date);
+});
+
+function createBox () {
      for (x=0; x < links.length;x++) {
          createElement("<a>","link-" + x + " col s6 m6  l3","href",links[x].link,"",".boxes");
          newTab(".link-" + x);
@@ -9,8 +17,8 @@ createBox();
          createElement("<div>","card-content" + x + " card-content gradicent-3 white-text center","key" ,"" ,"" ,".card-" + x);
          createElement("<i>","icon" + x + " medium material-icons","key" ,"" ,links[x].image ,".card-content" + x);
          createElement("<p>"," ","key" ,"" ,links[x].title ,".card-content" + x);
-     }
- }
+    }
+}
 
 function createElement(typeElement, nameClass, typeAttr, nameAttr, text, append) {
     $(typeElement)
@@ -24,3 +32,4 @@ function newTab(element) {
     $(element)
         .attr("target","_blank")
 }
+

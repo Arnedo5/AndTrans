@@ -32,4 +32,3 @@ function newTab(element) {
     $(element)
         .attr("target","_blank")
 }
-
